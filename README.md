@@ -23,7 +23,7 @@ either directly from the Blockchain or via a database (***LevelDB***)
 - Such security scheme was implemented through ***"modifiers"*** in the smart contract. 
 - As a result it cannot be gamed, even if you inherit from the contract.
 
-## Can this be gamed? Can I hack the scheme through inheritance?
+## Can this be gamed? Could I hack this through inheritance?
 - Not really, but I encourage you to try - just for kicks :)
 - The smart contract does not expose any public properties due to security reasons, even if you inherit from
 - Also notice that the modifiers will prevent you from revoking my account rights.
