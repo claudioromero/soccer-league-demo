@@ -1,7 +1,14 @@
 # Soccer League Demo
+> This API allows you to keep track of soccer match results on the blockchain.
+> It also provides endpoints for querying the raw data as well as a Table Of Positions (rank), 
+either directly from the Blockchain or via a database (**LevelDB**)
+
+## Primary Technical Contact
+- This API was created by Claudio Romero.
+- Please feel free to reach out at [mailto](mailto:riseofthemachines.xxi@gmail.com) in case you have any questions or suggestions.
 
 ## Overview
-- Smart contract tested and published on the blockchain (*Rinkeby*). The contract address is https://rinkeby.etherscan.io/address/0xf98100214fd34f67b8b784227638163f15880fc6
+- Smart contract tested and published on the blockchain (*Rinkeby*). The contract address is [0xf98100214fd34f67b8b784227638163f15880fc6](https://rinkeby.etherscan.io/address/0xf98100214fd34f67b8b784227638163f15880fc6)
 - Smart contract security implemented through ***modifiers*** and validations.
 - A simple user interface is also available, for demo purposes. (*HTML5, responsive*)
 - Blockchain queries are also saved in a database (*LevelDB*) for the sake of performance.
@@ -18,7 +25,7 @@
 - Email me your public address
 - I will grant you permissions to submit game results on the blockchain.
 
-## Can this be gamed? Can I revoke Claudio's permissions? Could I hack the scheme through inheritance?
+## Can this be gamed? Can I hack the scheme through inheritance?
 - Not really, but you are welcome to try, just for kicks :)
 - The contract does not expose any public properties due to security reasons.
 - Also notice that the modifiers will prevent you from revoking my account rights.
