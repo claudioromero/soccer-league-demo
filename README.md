@@ -11,30 +11,30 @@ either directly from the Blockchain or via a database (***LevelDB***)
 ## Overview
 - The smart contract was tested and published on the blockchain (***Rinkeby***). 
 - The contract address is [0xf98100214fd34f67b8b784227638163f15880fc6](https://rinkeby.etherscan.io/address/0xf98100214fd34f67b8b784227638163f15880fc6), available on Etherscan
+- Smart contract code is as efficient as possible (*see the ABI*)
+- Smart contract code is production-safe. It does not use the experimental ABI of Solidity.
 - Smart contract security implemented through ***modifiers*** and validations.
-- A simple user interface is also available, for demo purposes. (*HTML5, responsive*)
-- Blockchain queries are also saved in a database (*LevelDB*) for the sake of performance.
-- The API provides endpoints for recording the results of a match as well as for querying the raw data and aggregates table.
 - The smart contract stores the match results only, using efficient Solidity code in order to keep gas consumption at the minimum possible.
 
 ## Smart contract security
-- The owner of the contract (that would be me, *Claudio*) is the only party who can grant or revoke permissions on the smart contract.
-- Only the users authorized by Claudio will be allowed to submit match results on the blockchain.
-- Such security scheme was implemented through *"modifiers"* in the smart contract. 
-- As a result, it cannot be gamed even if you inherit from the contract.
-
-## How can I become an authorized party?
-- Email me your public address
-- I will grant you permissions to submit game results on the blockchain.
+- The owner of the contract (*that would be me, Claudio*) is the only party who can grant or revoke permissions on the smart contract, for demo purposes.
+- Only users authorized by *Claudio* will be allowed to submit match results on the blockchain.
+- Such security scheme was implemented through ***"modifiers"*** in the smart contract. 
+- As a result it cannot be gamed, even if you inherit from the contract.
 
 ## Can this be gamed? Can I hack the scheme through inheritance?
 - Not really, but I encourage you to try - just for kicks :)
 - The smart contract does not expose any public properties due to security reasons, even if you inherit from
 - Also notice that the modifiers will prevent you from revoking my account rights.
 
+## So how can I become an authorized party?
+- Send me your public address and I will grant you the respective permissions to submit game results on the blockchain.
+- Simple as that.
+- Meanwhile you can post results using the sample credentials I sent you in private.
+
 ## Database selected
 - The API caches blockchain queries in a database, for the sake of performance.
-- I choose **LevelDB** because it is fast and lightweight, not to mention it is ranked as one of the fastest key-value stores available.
+- I've choosen **LevelDB** because it is fast and lightweight, not to mention it is ranked as one of the fastest key-value stores available.
 - LevelDB is available at https://github.com/Level/level
 
 ## Code Styling Policy
