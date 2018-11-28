@@ -2,14 +2,15 @@
 - This API allows you to keep track of soccer match results on the blockchain.
 - It also provides endpoints for querying the raw data as well as a Table Of Positions (*rank*), 
 either directly from the Blockchain or via a database (***LevelDB***)
+- A simple user interface is also available, for demo purposes.
 
 ## Primary Technical Contact
-- This API was created by Claudio Romero.
-- Please feel free to reach out at [riseofthemachines.xxi@gmail.com](mailto:riseofthemachines.xxi@gmail.com) in case you have any questions or suggestions.
+- This API was created by [Claudio Romero](https://ar.linkedin.com/in/claudioromero)
+- Please feel free to reach out via LinkedIn in case you have any questions or suggestions.
 
 ## Overview
 - The smart contract was tested and published on the blockchain (***Rinkeby***). 
-- The contract address is [0xf98100214fd34f67b8b784227638163f15880fc6](https://rinkeby.etherscan.io/address/0xf98100214fd34f67b8b784227638163f15880fc6)
+- The contract address is [0xf98100214fd34f67b8b784227638163f15880fc6](https://rinkeby.etherscan.io/address/0xf98100214fd34f67b8b784227638163f15880fc6), available on Etherscan
 - Smart contract security implemented through ***modifiers*** and validations.
 - A simple user interface is also available, for demo purposes. (*HTML5, responsive*)
 - Blockchain queries are also saved in a database (*LevelDB*) for the sake of performance.
@@ -27,8 +28,8 @@ either directly from the Blockchain or via a database (***LevelDB***)
 - I will grant you permissions to submit game results on the blockchain.
 
 ## Can this be gamed? Can I hack the scheme through inheritance?
-- Not really, but you are welcome to try, just for kicks :)
-- The contract does not expose any public properties due to security reasons.
+- Not really, but I encourage you to try - just for kicks :)
+- The smart contract does not expose any public properties due to security reasons, even if you inherit from
 - Also notice that the modifiers will prevent you from revoking my account rights.
 
 ## Database selected
@@ -57,5 +58,5 @@ To run the API on your local environment please run the following on the command
 
     `npm start`
 
-The user interface and the API will be reachable at http://localhost:8080/
+The user interface and the API will be reachable through a web browser at http://localhost:8080/
 
