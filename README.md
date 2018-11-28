@@ -10,13 +10,14 @@ either directly from the Blockchain or via a database (***LevelDB***)
 
 ## Overview
 - The smart contract was tested and published on the blockchain (***Rinkeby***). 
-- The contract address is [0xf98100214fd34f67b8b784227638163f15880fc6](https://rinkeby.etherscan.io/address/0xf98100214fd34f67b8b784227638163f15880fc6), available on Etherscan
-- Smart contract code is as efficient as possible (*see the ABI*)
-- Smart contract code is production-safe. It does not use the experimental ABI of Solidity.
+- The contract address at Rinkeby is [0xf98100214fd34f67b8b784227638163f15880fc6](https://rinkeby.etherscan.io/address/0xf98100214fd34f67b8b784227638163f15880fc6), available on Etherscan
+- Smart contract code is as efficient as possible (*see the ABI*). It uses bytes instead of strings.
+- **Smart contract code is production-safe. It does not use the experimental ABI of Solidity.**
 - Smart contract security implemented through ***modifiers*** and validations.
 - The smart contract stores the match results only, using efficient Solidity code in order to keep gas consumption at the minimum possible.
+- Unicode characters are also supported *(for example, Spanish accents)*
 
-## Smart contract security
+## On smart contract security
 - The owner of the contract (*that would be me, Claudio*) is the only party who can grant or revoke permissions on the smart contract, for demo purposes.
 - Only users authorized by *Claudio* will be allowed to submit match results on the blockchain.
 - Such security scheme was implemented through ***"modifiers"*** in the smart contract. 
