@@ -4,6 +4,9 @@
 either directly from the Blockchain or via a database (***LevelDB***)
 - A simple user interface is also available, for demo purposes.
 
+## Live demo on Google Cloud!
+- The application is up and running at https://blockchain-demo-224000.appspot.com/ 
+
 ## Primary Technical Contact
 - This API was created by [Claudio Romero](https://ar.linkedin.com/in/claudioromero)
 - Please feel free to reach out via LinkedIn in case you have any questions or suggestions.
@@ -25,17 +28,16 @@ either directly from the Blockchain or via a database (***LevelDB***)
 
 ## Can this be gamed? Could I hack this through inheritance?
 - Not really, but I encourage you to try - just for kicks :)
-- The smart contract does not expose any public properties due to security reasons, even if you inherit from
+- The smart contract does not expose any public properties due to security reasons, even if you inherit from it.
 - Also notice that the modifiers will prevent you from revoking my account rights.
 
 ## So how can I become an authorized party?
 - Send me your public address and I will grant you the respective permissions to submit game results on the blockchain.
-- Simple as that.
 - Meanwhile you can post results using the sample credentials I sent you in private.
 
 ## Database selected
 - The API caches blockchain queries in a database, for the sake of performance.
-- I've choosen **LevelDB** because it is fast and lightweight, not to mention it is ranked as one of the fastest key-value stores available.
+- I've choosen **LevelDB** because it is fast and lightweight, not to mention it is ranked as one of the fastest key-value stores available worldwide.
 - LevelDB is available at https://github.com/Level/level
 
 ## Code Styling Policy
