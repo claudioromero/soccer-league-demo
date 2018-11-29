@@ -1,0 +1,10 @@
+{
+    "server": {
+        "port": 8080
+    },
+
+    "blockchain": {
+        "peerAddress": "https://rinkeby.infura.io/v3/b089d541dbb44286b25fa2c207bec578",
+        "contractAddress": "0xf98100214FD34f67B8b784227638163F15880fC6"
+    }
+}

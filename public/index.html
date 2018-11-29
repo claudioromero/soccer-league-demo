@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=yes">
+        <title>Demo</title>
+
+        <link rel="icon" href="images/favicon.gif">
+        <link rel="stylesheet" type="text/css" href="styles/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/custom.css">
+
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/semantic.min.js"></script>
+        <script src="js/startup.js"></script>
+        <script src="js/league.js"></script>
+    </head>
+
+    <body>
+        <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <a class="header item">League Demo</a>
+            </div>
+        </div>
+        
+        <div class="ui main container">
+            <div id="dvMessages" class="ui warning message transition hidden">
+                <i class="close icon"></i>
+                <div id="dvMessageHeader" class="header"></div>
+                <div id="dvMessageInner"></div>
+            </div>
+        
+            <div class="ui top attached tabular menu">
+                <a id="tbNewMatch" class="item active" data-tab="newMatchTab">New match</a>
+                <a id="tbTableOfPos" class="item" data-tab="tableOfPositionsTab">Table of Positions</a>
+                <a id="tbRwData" class="item" data-tab="rawDataTab">Raw Data</a>
+                <a id="tbMyAccount" class="item" data-tab="myAccountTab">My Account</a>
+            </div>
+            <div class="ui bottom attached tab segment active" data-tab="newMatchTab">
+                <div class="ui form">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Select the Local Team</label>
+                            <select id="cboLocalTeam" class="ui fluid search selection dropdown">
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Score of the Locals</label>
+                            <input type="text" size="4" maxlength="3" id="txtLocalScore" placeholder="0">
+                        </div>
+                    </div>
+    
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Select the Visitor Team</label>
+                            <select id="cboVisitorTeam" class="ui fluid dropdown">
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Score of the Visitors</label>
+                            <input type="text" class="ui input" size="4" maxlength="3" id="txtVisitorScore" placeholder="0">
+                        </div>
+                    </div>
+        
+                    <div class="field">
+                        <button id="cmdSave" class="ui primary button" type="button" onclick="saveData()">Save</button>
+                    </div>    
+                </div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="tableOfPositionsTab">
+
+                <div class="ui form">
+                    <div class="grouped fields">
+                        <label>Read options:</label>
+                        <div class="field">
+                        <div class="ui radio checkbox">
+                            <input id="ptReadFromBlockchain" type="radio" name="ptReadOptions" checked="checked">
+                            <label>Read from the Blockchain</label>
+                        </div>
+                        </div>
+                        <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="ptReadOptions">
+                            <label>Read from the database</label>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <button id="cmdTableOfPositions" class="ui primary button" type="button" onclick="getTableOfPositions()">Run Query</button>
+                    </div>    
+                </div>
+        
+                <table id="tbPositionsTable" class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Rank #</th>
+                            <th>Team</th>
+                            <th>Points</th>
+                            <th>Played</th>
+                            <th>Won</th>
+                            <th>Lost</th>
+                            <th>Draws</th>
+                            <th>Goals Difference</th>
+                            <th>Goals done</th>
+                            <th>Goals against</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="rawDataTab">
+
+                <div class="ui form">
+                    <div class="grouped fields">
+                        <label>Read options:</label>
+                        <div class="field">
+                        <div class="ui radio checkbox">
+                            <input id="rbReadFromBlockchain" type="radio" name="readOptions" checked="checked">
+                            <label>Read from the Blockchain</label>
+                        </div>
+                        </div>
+                        <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="readOptions">
+                            <label>Read from the database</label>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="ui toggle checkbox">
+                        <input type="checkbox" id="chkDisplay" checked="checked">
+                        <label>Display Team names instead of raw IDs (bytes32 to UTF8)</label>
+                    </div>
+
+                    <div class="field">
+                            <br/>
+                            <button id="cmdRawData" class="ui primary button" type="button" onclick="getRawData()">Get raw data</button>
+                    </div>    
+                </div>
+
+                <table id="tbRawData" class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Local Team</th>
+                            <th>Visitor Team</th>
+                            <th>Local Score</th>
+                            <th>Visitor Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="ui bottom attached tab segment" data-tab="myAccountTab">
+                <div class="ui form">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>My public address</label>
+                            <input id="txtPublicAddress" type="text" placeholder="Your public address goes here">
+                        </div>
+                        <div class="field">
+                            <label>My private key</label>
+                            <input id="txtPrivateKey" type="text" placeholder="Enter your private key here...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </body>
+</html>

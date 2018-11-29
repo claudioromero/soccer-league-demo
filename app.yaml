@@ -1,0 +1,20 @@
+runtime: nodejs8
+env: standard
+service: default
+
+env_variables:
+  GOOGLE_APPLICATION_CREDENTIALS: './GoogleCloudCredentials/production.json'
+  
+# HTTPS
+handlers:
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
